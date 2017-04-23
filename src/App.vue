@@ -14,6 +14,8 @@
 
         <!-- Exercise 3 -->
         <!-- Do the same as in Exercises 1 & 2, now with Computed Properties -->
+        <p>{{ reversedText }}</p>
+        <p>{{ countedWords }}</p>
 
         <!-- Exercise 4 -->
         <!-- Share the Computed Property rebuilding Exercise 2 via a Mixin -->
@@ -32,6 +34,16 @@ export default {
   filters: {
     reversText(value) {
       return value.split('').reverse().join('');
+    },
+  },
+  computed: {
+    reversedText() {
+      console.log('reversedText called');
+      return this.text.split('').reverse().join('');
+    },
+    countedWords() {
+      console.log('countedWords called');
+      return `${this.text} (${this.text.length})`;
     },
   },
 };
