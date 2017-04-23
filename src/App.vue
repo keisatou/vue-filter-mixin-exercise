@@ -25,25 +25,13 @@
 </template>
 
 <script>
+import textMixin from './textMixin';
+
 export default {
-  data() {
-    return {
-      text: 'Sample Text',
-    };
-  },
+  mixins: [textMixin],
   filters: {
     reversText(value) {
       return value.split('').reverse().join('');
-    },
-  },
-  computed: {
-    reversedText() {
-      console.log('reversedText called');
-      return this.text.split('').reverse().join('');
-    },
-    countedWords() {
-      console.log('countedWords called');
-      return `${this.text} (${this.text.length})`;
     },
   },
 };
